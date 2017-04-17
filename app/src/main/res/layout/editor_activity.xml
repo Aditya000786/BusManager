@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:paddingLeft="15dp"
+        android:paddingTop="30dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+    <TextView
+        android:layout_marginBottom="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bus Details"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bus Type"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agency"
+            android:layout_marginBottom="15dp"/>
+     
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:paddingTop="15dp">
+        <EditText
+            android:id="@+id/number"
+            android:layout_width="match_parent"
+            android:hint="Bus Number"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/fare"
+            android:layout_width="match_parent"
+            android:hint="Fare"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/arrival"
+            android:layout_width="match_parent"
+            android:hint="Arrival Stop"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/destination"
+            android:layout_width="match_parent"
+            android:hint="Destination Stop"
+            android:layout_height="wrap_content"/>
+
+        <Spinner
+            android:id="@+id/Bus_Type"
+            android:spinnerMode="dropdown"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </Spinner>
+
+        <Spinner
+            android:id="@+id/Bus_Agency"
+            android:spinnerMode="dropdown"
+
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </Spinner>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Bus Manager</string>
+
+    <string-array name="bus_type">
+        <item>A.C</item>
+        <item>NON A.C</item>
+    </string-array>
+
+    <string-array name="bus_agency">
+        <item>Government</item>
+        <item>Private</item>
+    </string-array>
+
+</resources>
