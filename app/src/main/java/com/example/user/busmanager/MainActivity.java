@@ -16,6 +16,8 @@ import com.example.user.busmanager.data.BusHelper;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    BusHelper DbHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,14 +33,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        DbHelper = new BusHelper(this);
         displayDatabaseInfo();
-        BusHelper DbHelper = new BusHelper(this);
+
+
     }
 
     private void displayDatabaseInfo() {
 
-        BusHelper mDbHelper = new BusHelper(this);
-        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+        SQLiteDatabase db = DbHelper.getReadableDatabase();
 
         String[] project = {
                 BusEntry.COLUMN_BUS_BUSNUMBER,
@@ -110,9 +113,16 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             // Respond to a click on the "Insert dummy data" menu option
             case R.id.delete:
+                delete();
+                displayDatabaseInfo();
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void delete() {
+        SQLiteDatabase db = DbHelper.getWritableDatabase();
+        db.delete(BusEntry.TABLE_NAME,null,null);
     }
 
 }
