@@ -1,4 +1,5 @@
 package com.example.user.busmanager;
+
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -20,26 +21,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FloatingActionButton fab=(FloatingActionButton)findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent i=new Intent(MainActivity.this,EditorClass.class);
+                Intent i = new Intent(MainActivity.this, EditorClass.class);
                 startActivity(i);
             }
         });
 
         displayDatabaseInfo();
-        BusHelper DbHelper=new BusHelper(this);
+        BusHelper DbHelper = new BusHelper(this);
     }
 
     private void displayDatabaseInfo() {
 
-        BusHelper mDbHelper=new BusHelper(this);
-        SQLiteDatabase db=mDbHelper.getReadableDatabase();
+        BusHelper mDbHelper = new BusHelper(this);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
 
-        String[] project={
+        String[] project = {
                 BusEntry.COLUMN_BUS_BUSNUMBER,
                 BusEntry.COLUMN_BUS_FARE,
                 BusEntry.COLUMN_BUS_ARRIVAL,
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 BusEntry.COLUMN_BUS_AGENCY
         };
 
-        Cursor cursor=db.query(BusEntry.TABLE_NAME,
+        Cursor cursor = db.query(BusEntry.TABLE_NAME,
                 project,
                 null,
                 null,
@@ -60,30 +61,30 @@ public class MainActivity extends AppCompatActivity {
             // Display the number of rows in the Cursor (which reflects the number of rows in the
             // pets table in the database).
             TextView displayView = (TextView) findViewById(R.id.text_view_bus);
-            displayView.setText("Number of rows in bus database table: " + cursor.getCount()+" bus\n\n");
+            displayView.setText("Number of rows in bus database table: " + cursor.getCount() + " bus\n\n");
             displayView.append(
-                    BusEntry.COLUMN_BUS_BUSNUMBER+" - "+BusEntry.COLUMN_BUS_FARE+" - "+
-                    BusEntry.COLUMN_BUS_ARRIVAL+" - "+BusEntry.COLUMN_BUS_DESTINATION+" - "+
-                    BusEntry.COLUMN_BUS_TYPE+" - "+BusEntry.COLUMN_BUS_AGENCY+"\n");
+                    BusEntry.COLUMN_BUS_BUSNUMBER + " - " + BusEntry.COLUMN_BUS_FARE + " - " +
+                            BusEntry.COLUMN_BUS_ARRIVAL + " - " + BusEntry.COLUMN_BUS_DESTINATION + " - " +
+                            BusEntry.COLUMN_BUS_TYPE + " - " + BusEntry.COLUMN_BUS_AGENCY + "\n");
 
-            int numberColumnIndex=cursor.getColumnIndex(BusEntry.COLUMN_BUS_BUSNUMBER);
-            int FareColumnIndex=cursor.getColumnIndex(BusEntry.COLUMN_BUS_FARE);
-            int arrivalColumnIndex=cursor.getColumnIndex(BusEntry.COLUMN_BUS_ARRIVAL);
-            int destinationColumnIndex=cursor.getColumnIndex(BusEntry.COLUMN_BUS_DESTINATION);
-            int typeColumnIndex=cursor.getColumnIndex(BusEntry.COLUMN_BUS_TYPE);
-            int agencyColumnIndex=cursor.getColumnIndex(BusEntry.COLUMN_BUS_AGENCY);
+            int numberColumnIndex = cursor.getColumnIndex(BusEntry.COLUMN_BUS_BUSNUMBER);
+            int FareColumnIndex = cursor.getColumnIndex(BusEntry.COLUMN_BUS_FARE);
+            int arrivalColumnIndex = cursor.getColumnIndex(BusEntry.COLUMN_BUS_ARRIVAL);
+            int destinationColumnIndex = cursor.getColumnIndex(BusEntry.COLUMN_BUS_DESTINATION);
+            int typeColumnIndex = cursor.getColumnIndex(BusEntry.COLUMN_BUS_TYPE);
+            int agencyColumnIndex = cursor.getColumnIndex(BusEntry.COLUMN_BUS_AGENCY);
 
-            while(cursor.moveToNext()){
-                String currentNumber=cursor.getString(numberColumnIndex);
-                String currentFare=cursor.getString(FareColumnIndex);
-                String currentArrival=cursor.getString(arrivalColumnIndex);
-                String cuurentDestination=cursor.getString(destinationColumnIndex);
-                int cuurentType=cursor.getInt(typeColumnIndex);
-                int cuurentAgency=cursor.getInt(agencyColumnIndex);
+            while (cursor.moveToNext()) {
+                String currentNumber = cursor.getString(numberColumnIndex);
+                String currentFare = cursor.getString(FareColumnIndex);
+                String currentArrival = cursor.getString(arrivalColumnIndex);
+                String cuurentDestination = cursor.getString(destinationColumnIndex);
+                int cuurentType = cursor.getInt(typeColumnIndex);
+                int cuurentAgency = cursor.getInt(agencyColumnIndex);
 
-                displayView.append("\n"+
-                        currentNumber+" - "+currentFare+" - "+currentArrival+" - "+cuurentDestination+
-                        " - "+cuurentType+" - "+cuurentAgency+"\n");
+                displayView.append("\n" +
+                        currentNumber + " - " + currentFare + " - " + currentArrival + " - " + cuurentDestination +
+                        " - " + cuurentType + " - " + cuurentAgency + "\n");
             }
         } finally {
             // Always close the cursor when you're done reading from it. This releases all its
@@ -94,11 +95,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.catlog_menu,menu);
+        getMenuInflater().inflate(R.menu.catlog_menu, menu);
         return true;
     }
 
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
         displayDatabaseInfo();
     }
@@ -110,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
             // Respond to a click on the "Insert dummy data" menu option
             case R.id.delete:
                 return true;
-           }
+        }
         return super.onOptionsItemSelected(item);
     }
 

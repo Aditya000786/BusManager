@@ -1,33 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="horizontal">
 
     <LinearLayout
-        android:paddingLeft="15dp"
-        android:paddingTop="30dp"
         android:layout_width="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:paddingLeft="15dp"
+        android:paddingTop="30dp">
     <TextView
-        android:layout_marginBottom="150dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bus Details"/>
+        android:layout_marginBottom="150dp"
+        android:text="Bus Details"
+        android:textColor="#4c0099"
+        android:textSize="20dp"/>
 
     <TextView
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="35dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bus Type"/>
+        android:layout_marginBottom="35dp"
+        android:layout_marginTop="10dp"
+        android:text="Bus Type"
+        android:textColor="#4c0099"
+        android:textSize="20dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
             android:text="Agency"
-            android:layout_marginBottom="15dp"/>
+            android:textColor="#4c0099"
+            android:textSize="20dp"/>
      
     </LinearLayout>
     <LinearLayout
@@ -39,43 +45,43 @@
         <EditText
             android:id="@+id/number"
             android:layout_width="match_parent"
-            android:hint="Bus Number"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="Bus Number" />
 
         <EditText
             android:id="@+id/fare"
             android:layout_width="match_parent"
-            android:hint="Fare"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:hint="Fare"/>
 
         <EditText
             android:id="@+id/arrival"
             android:layout_width="match_parent"
-            android:hint="Arrival Stop"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:hint="Arrival Stop"/>
 
         <EditText
             android:id="@+id/destination"
             android:layout_width="match_parent"
-            android:hint="Destination Stop"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:hint="Destination Stop"/>
 
         <Spinner
             android:id="@+id/Bus_Type"
-            android:spinnerMode="dropdown"
-            android:layout_marginTop="15dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:spinnerMode="dropdown">
 
         </Spinner>
 
         <Spinner
             android:id="@+id/Bus_Agency"
-            android:spinnerMode="dropdown"
-
-            android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:spinnerMode="dropdown">
 
         </Spinner>
 

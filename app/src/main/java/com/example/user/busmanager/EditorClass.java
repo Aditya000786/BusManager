@@ -28,11 +28,9 @@ import static android.R.attr.type;
 public class
 EditorClass extends AppCompatActivity {
 
+    BusHelper DbHlper;
     private Spinner typeSpinner;
     private Spinner agencySpinner;
-
-    BusHelper DbHlper;
-
     private EditText numberEditText;
     private EditText fareEditText;
     private EditText arrivalEditText;

@@ -8,9 +8,10 @@
     tools:context="com.example.user.busmanager.MainActivity">
 
 <TextView
+    android:id="@+id/text_view_bus"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/text_view_bus"/>
+    android:layout_margin="15dp"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
