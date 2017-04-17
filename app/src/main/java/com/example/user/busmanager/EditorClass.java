@@ -124,8 +124,7 @@ EditorClass extends AppCompatActivity {
                 return true;
 
             case R.id.delete:
-                //delete();
-                return true;
+                NavUtils.navigateUpFromSameTask(this);
 
             case android.R.id.home:
                 NavUtils.navigateUpFromSameTask(this);
