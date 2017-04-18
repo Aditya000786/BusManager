@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingTop="30dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="150dp"
+            android:text="Stock Details"
+            android:textColor="#4c0099"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="35dp"
+            android:layout_marginTop="10dp"
+            android:text="Stock Type"
+            android:textColor="#4c0099"
+            android:textSize="20dp"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:paddingTop="15dp">
+
+        <EditText
+            android:id="@+id/old_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Old Data" />
+
+        <EditText
+            android:id="@+id/new_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="New Data"/>
+
+        <EditText
+            android:id="@+id/company_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Company Name"/>
+
+        <EditText
+            android:id="@+id/owner_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Owner Name"/>
+
+        <Spinner
+            android:id="@+id/Stock_Type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:spinnerMode="dropdown">
+
+        </Spinner>
+
+
+    </LinearLayout>
+</LinearLayout>
