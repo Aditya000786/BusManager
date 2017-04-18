@@ -6,6 +6,11 @@
         <item>NON A.C</item>
     </string-array>
 
+    <string-array name="stock_type">
+        <item>BSE</item>
+        <item>NSE</item>
+    </string-array>
+
     <string-array name="bus_agency">
         <item>Government</item>
         <item>Private</item>
